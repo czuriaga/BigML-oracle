@@ -1,0 +1,18 @@
+Oracle_Table_CSV.sql: Generates a CSV file from a user.table given by params
+
+Usage: sqlplus USER/PASSWORD[@DATABASE] @Oracle_Table_CSV.sql OWNER TABLE
+Usage: sqlplus USER/PASSWORD[@//host:port/SID] @Oracle_Table_CSV.sql OWNER TABLE
+
+USER ---> user to connect to the database (usually a DBA or the owner of the table we wanna export)
+PASSWORD ---> password of the previous user
+DATABASE ---> Connect Identifier to the target database
+OWNER ---> First param. Owner of the table or view we wanna export
+TABLE ---> Table, view, materialized view,... to export to csv
+
+Example1:  sqlplus scott/tiger @Oracle_Table_CSV.sql scott emp
+Example2:  sqlplus scott/tiger@remoteDB1 @Oracle_Table_CSV.sql scott emp
+Example3:  sqlplus system/oracle@//10.0.1.103:1521/orcl @Oracle_Table_CSV.sql sys dba_tab_columns
+
+The script generates an intermediate SQL file (owner.table.sql) that is executed to generate the final .csv file (owner.table.csv)
+
+The field separator is ; by default, and the quotes are " by default
