@@ -8,9 +8,9 @@
 -- ******** OWNER ---> First param. Owner of the table or view we wanna export
 -- ******** TABLE ---> Table, view, materialized view,... to export to csv
 -- ******** Example1:  sqlplus scott/tiger @Oracle_Table_CSV.sql scott emp
--- ******** Example1:  sqlplus scott/tiger@remoteDB1 @Oracle_Table_CSV.sql scott emp
--- ******** Example2:  sqlplus system/oracle@//10.0.1.103:1521/orcl @Oracle_Table_CSV.sql sys dba_tab_columns
--- ******** The script generates a intermediate SQL file (owner.table.sql) that is executed to generate the final .csv file (owner.table.csv)
+-- ******** Example2:  sqlplus scott/tiger@remoteDB1 @Oracle_Table_CSV.sql scott emp
+-- ******** Example3:  sqlplus system/oracle@//10.0.1.103:1521/orcl @Oracle_Table_CSV.sql sys dba_tab_columns
+-- ******** The script generates an intermediate SQL file (owner.table.sql) that is executed to generate the final .csv file (owner.table.csv)
 -- ******** The field separator is ; by default, and the quotes are " by default
 -- **************************************************************************************
 
